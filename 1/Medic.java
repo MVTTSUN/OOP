@@ -3,17 +3,17 @@ public class Medic extends Player {
 
   public Medic(String name) {
     super(name);
-    this.damage = 10;
-    this.maxHealthPoint = 150;
-    this.healthPoint = this.maxHealthPoint;
+    this.setDamage(10);
+    this.setMaxHealthPoint(150);
+    this.healthPoint = this.getMaxHealthPoint();
   }
 
   public void restoreHealth(Player player) {
-    if (this.maxHealthPoint > player.healthPoint + this.healthRestorePoint) {
+    if (this.getMaxHealthPoint() > player.healthPoint + this.healthRestorePoint) {
       player.healthPoint += this.healthRestorePoint;
     } else {
-      player.healthPoint = player.maxHealthPoint;
+      player.healthPoint = player.getMaxHealthPoint();
     }
-    System.out.printf("%s вылечил %s на %f. У %s осталось %f очков жизни\n", this.name, player.name, this.healthRestorePoint, player.name, player.healthPoint);
+    System.out.printf("%s вылечил %s на %f. У %s осталось %f очков жизни\n", this.getName(), player.getName(), this.healthRestorePoint, player.getName(), player.healthPoint);
   }
 }
