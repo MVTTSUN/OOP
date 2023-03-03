@@ -3,6 +3,6 @@ public class Sniper extends Player {
     super(name);
     this.setDamage(100);
     this.setMaxHealthPoint(100);
-    this.healthPoint = this.getMaxHealthPoint();
+    this.setHealthPoint(this.getMaxHealthPoint());
   }
 }

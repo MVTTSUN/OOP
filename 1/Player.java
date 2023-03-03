@@ -1,10 +1,10 @@
 public class Player {
-  static Long count = 0L;
-  protected Long id = 0L;
+  private static Long count = 0L;
+  private Long id = 0L;
   private String name;
   private double damage;
   private double maxHealthPoint;
-  protected double healthPoint;
+  private double healthPoint;
 
   public Player(String name) {
     this.name = name;
@@ -21,6 +21,14 @@ public class Player {
 
   public void setMaxHealthPoint(double maxHealthPoint) {
     this.maxHealthPoint = maxHealthPoint;
+  }
+
+  public double getHealthPoint() {
+    return this.maxHealthPoint;
+  }
+
+  public void setHealthPoint(double healthPoint) {
+    this.healthPoint = healthPoint;
   }
 
   public double getDamage() {

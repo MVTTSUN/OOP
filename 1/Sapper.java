@@ -3,6 +3,6 @@ public class Sapper extends Player {
     super(name);
     this.setDamage(50);
     this.setMaxHealthPoint(120);
-    this.healthPoint = this.getMaxHealthPoint();
+    this.setHealthPoint(this.getMaxHealthPoint());
   }
 }
