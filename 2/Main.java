@@ -31,15 +31,15 @@ public class Main {
     private static final String ANSI_RED_BACKGROUND = "\u001B[41m";
 
     public void render(Object object) {
-      if (object instanceof Building building) {
-        Building buildingUnit = (Building) object;
+      if (object instanceof HasHealthPoint hasHealthPoint) {
+        HasHealthPoint hasHealthPointUnit = (HasHealthPoint) object;
 
-        pointsView(object, "health", buildingUnit.getCurrentHealthPoint(), buildingUnit.getMaxHealthPoint());
-      } else if (object instanceof Person person) {
-        Person personUnit = (Person) object;
+        pointsView(object, "health", hasHealthPointUnit.getCurrentHealthPoint(), hasHealthPointUnit.getMaxHealthPoint());
+      }
+      if (object instanceof Tiredness tiredness) {
+        Tiredness tirednessUnit = (Tiredness) object;
         
-        pointsView(object, "health", personUnit.getCurrentHealthPoint(), personUnit.getMaxHealthPoint());
-        pointsView(object, "tiredness", personUnit.getCurrentEnergy(), personUnit.getMaxEnergy());
+        pointsView(object, "tiredness", tirednessUnit.getCurrentEnergy(), tirednessUnit.getMaxEnergy());
       }
     }
 
